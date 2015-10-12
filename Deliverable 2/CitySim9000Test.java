@@ -342,5 +342,42 @@ public class CitySim9000Test {
 		assertEquals("University",returnVal);	
 	}
 	
+	/*Check Finish Test*/
+	@Test
+	//Checks to see if the program finishes if the program is on the first iteration and the current Location is the Mall
+	public void checkfinish_program_continues_firstiteration()
+	{
+		Drive drive=new Drive(); 
+		int iteration=0; 
+		String curLocation="Mall";
+		
+		Boolean result=drive.checkFinish(iteration, curLocation);
+		assertTrue(result); 
+	}
+	
+	@Test
+	//Checks to see if the method returns true if the it's on the second iteration and the location is mall
+	public void checkfinish_program_continues()
+	{
+		Drive drive=new Drive(); 
+		int iteration=1; 
+		String curLocation="Mall";
+		
+		Boolean result=drive.checkFinish(iteration, curLocation);
+		assertTrue(result); 
+	}
+	
+	@Test
+	//Tests to see if the method returns false if the iteration is 0 and the current location is outside city 
+	public void checkfinish_program_ends()
+	{
+		Drive drive=new Drive(); 
+		int iteration=0; 
+		String curLocation="Outside City";
+		
+		Boolean result=drive.checkFinish(iteration, curLocation);
+		assertFalse(result); 
+	}
+	
 	
 }

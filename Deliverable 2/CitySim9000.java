@@ -57,7 +57,7 @@ public class CitySim9000
 			String curlocation=nextLocation; 
 		
 		
-			while(iteration!=0 || !curlocation.equals("Outside City"))
+			while(drive.checkFinish(iteration, curlocation))
 			{
 			
 				System.out.print("Driver "+driver+" is heading from "+curlocation+" to ");
